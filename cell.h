@@ -51,3 +51,6 @@ void initialize_board(cell board[][SIZE]);
  * String representation of the board.
  */
 void board_repr(cell board[][SIZE]);
+
+
+void next_step(cell now[][SIZE], cell future[][SIZE]);

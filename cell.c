@@ -112,3 +112,15 @@ void board_repr(cell board[][SIZE]) {
         printf("\n");
     }
 }
+
+void next_step(cell now[][SIZE], cell future[][SIZE]) {
+    int i, j;
+    
+    for(i = 0; i < SIZE; i++) {
+        for(j = 0; j < SIZE; j++) {
+            cell * now_cell    = get_cell(j, i, now);
+            cell * future_cell = get_cell(j, i, future);
+            now_cell->is_alive = future_cell->is_alive;
+        }
+    }
+}
