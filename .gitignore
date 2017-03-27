@@ -1,2 +1,4 @@
-a.out
+*.out
 *.h.gch
+*.c.swp
+*.h.swp
