@@ -15,6 +15,10 @@ typedef struct {
  */
 void get_neighbours_states(int x, int y, cell board[][SIZE], int BUFFER[]); 
 
+int count_living_neighbours(int BUFFER[]);
+
+int count_dead_neighbours(int BUFFER[]);
+
 /**
  * Returns pointer to the cell of given position.
  */
@@ -25,28 +29,25 @@ cell * get_cell( int x, int y, cell board[][SIZE]);
  */
 void cell_repr(cell * c);
 
-
+/**
+ * Function checks if given position exists on board that
+ * have size 'board_size'.
+ */
 int position_on_board(int x, int y, int board_size);
 
+/**
+ * Check what future state of cell is going to be.
+ * Sets this state on future board.
+ */
+void get_future_state(cell now[][SIZE], cell future[][SIZE], int BUFFER[NEIGH_BUFFSIZE]);
 
+/**
+ * Sets coordinates from (0, 0) to (SIZE - 1, SIZE - 1) to every
+ * cell on the board.
+ */
 void initialize_board(cell board[][SIZE]);
-///**
-// * Returns pointer to the array of cell's neighbours.
-// * It also checks if neighbours is on the board.
-// */
-//cell * get_neighbours(cell * cell);
-//
-///**
-// * Returns array of all living cells on the board.
-// */
-//cell ** get_living_cells(cell board[][SIZE]);
-//
-///**
-// * Returns all significant cells of the board.
-// */
-//cell ** get_significant_cells(cell board[][SIZE]);
-//
-///**
-// * Returns 'future' state from given 'now' state.
-// */
-//cell ** future(cell now[][SIZE]);
+
+/**
+ * String representation of the board.
+ */
+void board_repr(cell board[][SIZE]);

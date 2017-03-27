@@ -13,6 +13,9 @@ int main (char ** argv, int argc) {
     cell_repr(c);
     c = get_cell(20, 20, state_now);
     cell_repr(c);
+    c = get_cell(1, 1, state_now);
+    c->is_alive = 1;
+    cell_repr(c);
     c = get_cell(19, 19, state_now);
     cell_repr(c);
     get_neighbours_states(0, 0, state_now, NEIGHBOURS_STATE_BUFFER);
@@ -20,4 +23,7 @@ int main (char ** argv, int argc) {
     for(i = 0; i < 8; i++) {
         printf("%d ", NEIGHBOURS_STATE_BUFFER[i]);
     }
+    printf("\n");
+
+    board_repr(state_now);
 }
